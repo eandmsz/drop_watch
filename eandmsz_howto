@@ -1,0 +1,23 @@
+Install on Ubuntu:
+
+sudo apt-get install -y libnl-3-dev libnl-genl-3-dev binutils-dev libreadline6-dev
+git clone https://github.com/pavel-odintsov/drop_watch
+cd drop_watch/src
+vim Makefile # comment out the -Werror argument to gcc
+make
+
+Usage:
+
+sudo ./dropwatch -l kas
+Initalizing kallsyms db
+dropwatch> start
+Enabling monitoring...
+Kernel monitoring activated.
+Issue Ctrl-C to stop monitoring
+
+1 drops at tcp_v4_do_rcv+cd (0xffffffff81799bad)
+10 drops at tcp_v4_rcv+80 (0xffffffff8179a620)
+1 drops at sk_stream_kill_queues+57 (0xffffffff81729ca7)
+4 drops at unix_release_sock+20e (0xffffffff817dc94e)
+1 drops at igmp_rcv+e1 (0xffffffff817b4c41)
+1 drops at igmp_rcv+e1 (0xffffffff817b4c41)
